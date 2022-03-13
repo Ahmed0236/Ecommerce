@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { Link, useParams, useNavigate, useLocation } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import {
   Row,
   Col,
@@ -20,7 +20,6 @@ function ProductScreen() {
   const [qty, setQty] = useState(1);
 
   const params = useParams();
-  const location = useLocation();
   let navigate = useNavigate();
 
   const dispatch = useDispatch();
