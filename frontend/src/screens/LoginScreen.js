@@ -14,7 +14,7 @@ function LoginScreen() {
   const [password, setPassword] = useState("");
 
   const location = useLocation();
-  const navigate = useNavigate();
+  let navigate = useNavigate();
 
   const dispatch = useDispatch();
   const redirect = location.search ? location.search.split("=")[1] : "/";

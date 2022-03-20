@@ -16,6 +16,7 @@ import {
   USER_UPDATE_PROFILE_RESET,
 } from "../constants/userConstants";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export const login = (email, password) => async (dispatch) => {
   try {

@@ -16,7 +16,7 @@ import { addToCart, removeFromCart } from "../actions/cartActions";
 function CartScreen() {
   const params = useParams();
   const productId = params.id;
-  const navigate = useNavigate();
+  let navigate = useNavigate();
   const location = useLocation();
 
   const qty = location.search ? location.search.split("=")[1] : 1;
@@ -37,7 +37,8 @@ function CartScreen() {
   };
 
   const checkoutHandler = () => {
-    navigate("/login?redirect=shipping");
+    navigate("/shipping");
+    // navigate("/login?redirect=shipping");
   };
 
   return (

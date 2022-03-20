@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import Loader from "../components/Loader";
@@ -16,7 +15,7 @@ function profileScreens() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [message, setmessage] = useState("");
 
-  const navigate = useNavigate();
+  let navigate = useNavigate();
 
   const dispatch = useDispatch();
 
@@ -45,7 +44,7 @@ function profileScreens() {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    if (password != confirmPassword) {
+    if (password !== confirmPassword) {
       setmessage("Passwords do not match");
     } else {
       dispatch(

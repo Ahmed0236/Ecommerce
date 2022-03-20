@@ -17,7 +17,7 @@ function RegisterScreen() {
   const [message, setmessage] = useState("");
 
   const location = useLocation();
-  const navigate = useNavigate();
+  let navigate = useNavigate();
 
   const dispatch = useDispatch();
   const redirect = location.search ? location.search.split("=")[1] : "/";
@@ -32,7 +32,7 @@ function RegisterScreen() {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    if (password != confirmPassword) {
+    if (password !== confirmPassword) {
       setmessage("Passwords do not match");
     } else {
       dispatch(register(name, email, password));
